@@ -1,3 +1,5 @@
+const fecha = new Date();
+
 //Callback functions
 const fahrenheigthToCelcius  = gradosFahrenheigth => (5/9) * gradosFahrenheigth;
 const displayResult = (callbackfn, grados) => {
@@ -49,10 +51,10 @@ const Vec = [Perro, Perro2];
 Vec.forEach(animal => {
     //Cambiar propiedad nombre a cada objeto de la lista
     animal.nombre = "Cansón";
+    //nueva propiedad
+    animal.creadoEn =  `${fecha.getDay()} - ${fecha.getMonth()} - ${fecha.getFullYear()}`;
+    console.log(animal.creadoEn);
 });
-
-console.log(Perro);
-console.log(Perro.caracteristicas.comida);
 
 //Segunda forma - No indicada
 const Auto = {};
@@ -62,8 +64,6 @@ Auto.caracteristicas = {
     marca:"CosteñoxCars",
     kms: 72837,
 }
-
-console.log(Auto.caracteristicas);
 
 //Tercera forma
 let marca = "FuckMercedez";
@@ -84,3 +84,7 @@ const numbers = [10, 20, 30];
 const sum = (a, b, c) => a + b + c;
 console.log(sum(...numbers)); 
 
+//Destructuring (obtener las propiedades)
+
+const {color} = Perro;
+console.log(color);
